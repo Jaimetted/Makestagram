@@ -50,6 +50,7 @@
 		87B3C09F1B433D040050A77A /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B3C09E1B433D040050A77A /* Post.swift */; };
 		87B510BC1B446A9B0014A540 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B510BB1B446A9A0014A540 /* PostTableViewCell.swift */; };
 		87BFA3951B44881F00EDFDEA /* ParseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BFA3941B44881F00EDFDEA /* ParseHelper.swift */; };
+		EC58580A1B470C1A001A1DFF /* FriendSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5858091B470C1A001A1DFF /* FriendSearchTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -195,6 +196,7 @@
 		87B3C09E1B433D040050A77A /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		87B510BB1B446A9A0014A540 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		87BFA3941B44881F00EDFDEA /* ParseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseHelper.swift; sourceTree = "<group>"; };
+		EC5858091B470C1A001A1DFF /* FriendSearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendSearchTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -407,6 +409,7 @@
 		87B510B31B446A670014A540 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				EC5858001B470BAD001A1DFF /* FriendSearch */,
 				87B510B41B446A670014A540 /* Timeline */,
 			);
 			path = Views;
@@ -418,6 +421,14 @@
 				87B510BB1B446A9A0014A540 /* PostTableViewCell.swift */,
 			);
 			path = Timeline;
+			sourceTree = "<group>";
+		};
+		EC5858001B470BAD001A1DFF /* FriendSearch */ = {
+			isa = PBXGroup;
+			children = (
+				EC5858091B470C1A001A1DFF /* FriendSearchTableViewCell.swift */,
+			);
+			name = FriendSearch;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -607,6 +618,7 @@
 				87B3C09A1B4320600050A77A /* PhotoTakingHelper.swift in Sources */,
 				87B3C0911B420C410050A77A /* PhotoViewController.swift in Sources */,
 				62C8C1E61B06BD6500DC3EA7 /* AppDelegate.swift in Sources */,
+				EC58580A1B470C1A001A1DFF /* FriendSearchTableViewCell.swift in Sources */,
 				627718971B0A581700AF5C6E /* FilterViewController.swift in Sources */,
 				87B3C09B1B432CE80050A77A /* TimelineViewController.swift in Sources */,
 				87BFA3951B44881F00EDFDEA /* ParseHelper.swift in Sources */,

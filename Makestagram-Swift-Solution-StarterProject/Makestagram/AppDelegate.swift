@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         Parse.setApplicationId("zE9medsz9BM2sZE9WGSaUap6x3xL9WxzbINtkzIQ", clientKey: "6TRT1mHalob1PSGwbHEZz2SgrcowS3MrKSdZAEVz")
     // Override point for customization after application launch.
-    PFUser.logInWithUsername("test", password: "test")
+    PFUser.logInWithUsername("test2", password: "test2")
     
     if let user = PFUser.currentUser() {
         println("Log in successful")
