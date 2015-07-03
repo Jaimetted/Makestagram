@@ -37,23 +37,24 @@ class ParseHelper {
     // ...
     
     // 2
+    // 1
+    // 1
     static func timelineRequestforCurrentUser(completionBlock: PFArrayResultBlock) {
-        let followingQuery = PFQuery(className: ParseFollowClass)
-        followingQuery.whereKey(ParseLikeFromUser, equalTo:PFUser.currentUser()!)
+        let followingQuery = PFQuery(className: "Follow")
+        followingQuery.whereKey("fromUser", equalTo:PFUser.currentUser()!)
         
         let postsFromFollowedUsers = Post.query()
-        postsFromFollowedUsers!.whereKey(ParsePostUser, matchesKey: ParseFollowToUser, inQuery: followingQuery)
+        postsFromFollowedUsers!.whereKey("user", matchesKey: "toUser", inQuery: followingQuery)
         
         let postsFromThisUser = Post.query()
-        postsFromThisUser!.whereKey(ParsePostUser, equalTo: PFUser.currentUser()!)
+        postsFromThisUser!.whereKey("user", equalTo: PFUser.currentUser()!)
         
         let query = PFQuery.orQueryWithSubqueries([postsFromFollowedUsers!, postsFromThisUser!])
-        query.includeKey(ParsePostUser)
-        query.orderByDescending(ParsePostCreatedAt)
+        query.includeKey("user")
+        query.orderByDescending("createdAt")
         
         query.findObjectsInBackgroundWithBlock(completionBlock)
     }
-    
     static func likePost(user: PFUser, post: Post) {
         let likeObject = PFObject(className: ParseLikeClass)
         likeObject[ParseLikeFromUser] = user
@@ -80,7 +81,6 @@ class ParseHelper {
             }
         }
     }
-    
     static func likesForPost(post: Post, completionBlock: PFArrayResultBlock) {
         let query = PFQuery(className: ParseLikeClass)
         query.whereKey(ParseLikeToPost, equalTo: post)
@@ -88,5 +88,12 @@ class ParseHelper {
         
         query.findObjectsInBackgroundWithBlock(completionBlock)
     }
+}
+extension PFObject : Equatable {
+    
+}
+
+public func ==(lhs: PFObject, rhs: PFObject) -> Bool {
+    return lhs.objectId == rhs.objectId
 }
 

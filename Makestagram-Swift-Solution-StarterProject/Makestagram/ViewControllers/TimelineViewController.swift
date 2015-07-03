@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+
 class TimelineViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
@@ -36,7 +37,7 @@ class TimelineViewController: UIViewController {
         
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 320
-        
+    
         
         ParseHelper.timelineRequestforCurrentUser {
             (result: [AnyObject]?, error: NSError?) -> Void in
@@ -44,7 +45,6 @@ class TimelineViewController: UIViewController {
             
             self.tableView.reloadData()
         }
-        
     }
 }
 
